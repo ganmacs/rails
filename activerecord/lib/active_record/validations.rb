@@ -68,7 +68,7 @@ module ActiveRecord
     end
 
     def perform_validations(options={}) # :nodoc:
-      options[:validate] == false || valid?(options[:context])
+      !options[:validate] || valid?(options[:context])
     end
   end
 end
